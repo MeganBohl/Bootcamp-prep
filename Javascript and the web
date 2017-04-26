@@ -1,0 +1,48 @@
+When we view a webpage, we are really viewing three different components. There is the HTML, which is responsible for the content. There is CSS, which styles a webpage, and there is Javascript which adds behavior to that HTML.
+When we say Javascript adds behavior we mean three things. Javascript allows us to:
+Select certain elements
+Add or remove HTML from a webpage
+Listen to events on a webpage.
+We still don't know how to implement any of this, by the way. Don't worry, we will.
+
+One More
+
+Quick reminder to make sure you're in the console in the CodePen Scope:
+
+Codepen
+
+OK, let's do one more together and then it's time for you to do a few on your own.
+
+The next question is
+
+// 2. Select the first link in the first paragraph
+	var mathematicianLink = document.querySelector('body')
+	var isSecondAnswerCorrect = (mathematicianLink.href == "https://en.wikipedia.org/wiki/Mathematician")
+	console.log("is the second answer correct? " + isSecondAnswerCorrect)
+Again, if you copy the == line into your console (mathematicianLink.href == "/wiki/Mathematician"), you'll get mathematicianLink is not defined. We know this error. It means that the variable mathematicianLink has been set yet! Easy Peasy. Type in var mathematicianLink = document.querySelector('body') and you'll now have the mathemeticianLink variable set. We can double check by typing mathematicianLink and pressing enter. You'll see we get the entire body! That's not what we want all. We want the first link, in the first paragraph.
+
+How do we get the first paragraph? Remember that if you just type in the tag itself you'll get the first of that tag. We want the first paragraph, which is a p tag. So, first let's try out document.querySelector('p'). If you expand that, you'll see it's this entire lab! Whoops, not quite what we want. We need to scope this down to the wikipedia body.
+
+If you use the element inspector:
+
+inspector
+
+And then hover over the Wikipedia text, you'll notice the entire thing is in a div tag with the class mw-body. Eureka! First let's grab the mw-body class using the .. So first of all document.querySelector('.mw-body'). Now we have the whole body of the wikipedia post. Let's scope it down to the first paragraph element. We can do this like so: document.querySelector('.mw-body p'). Look, the paragraph we care about. Finally we need to get the a tag. Let's keep it going with document.querySelector('.mw-body p a') Now we have what we are looking for. Let's bring that back into our solution
+
+// 2. Select the first link in the first paragraph
+	var mathematicianLink = document.querySelector('.mw-body p a')
+	let isSecondAnswerCorrect = (mathematicianLink.href == "http://s.codepen.io/wiki/Mathematician")
+	console.log("is the second answer correct? " + isSecondAnswerCorrect)
+You got this
+
+The rest of the problems will work similar to that. We will be asking you to change the first line of the problem to make sure you are either selecting the correct element or the correct attribute. If you refresh the page and the console tells you that you have the answer correct, you got it right.
+
+One thing to remember is that when working through these labs, developing a process for approaching problems in the way a professional programmer would is as important (if not more important) than learning the correct methods, so try to use the process we performed above - even if you may not need it for every problem. As you move forward, you will build your own process based on the principles of gathering feedback, summarizing a problem, checking the details, that works for you.
+
+Here's what's left:
+
+Select the text of the first link in the first paragraph
+Select the bold title, above the picture of Ada Lovelace, in the infobox to the right
+Good luck!
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help
